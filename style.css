@@ -390,3 +390,45 @@ body {
     .hero-content h1 { font-size: 2.5rem; }
     .form-container-box { padding: 30px; }
 }
+
+/* Stretches the form section container across the screen viewport width */
+.container-fluid.application-full-width {
+    width: 100%;
+    padding: 0 40px;
+}
+
+.form-container-box.full-screen-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    background: var(--pure-white);
+    padding: 60px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+    border: 1px solid var(--accent-silver);
+}
+
+/* 4-Column Grid Structure for Document Files */
+.file-upload-matrix {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Responsive breakdowns for wide configurations */
+@media (max-width: 1200px) {
+    .file-upload-matrix {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid.application-full-width {
+        padding: 0 16px;
+    }
+    .form-container-box.full-screen-box {
+        padding: 30px 16px;
+    }
+    .file-upload-matrix {
+        grid-template-columns: 1fr;
+    }
+}

@@ -235,10 +235,10 @@
             </div>
         </section>
 
-        <!-- Interactive Secure Portal Form Container -->
+           <!-- Interactive Secure Portal Form Container (Expanded Full Width) -->
         <section id="apply" class="application-section section-padding">
-            <div class="container max-width-md">
-                <div class="form-container-box">
+            <div class="container-fluid application-full-width">
+                <div class="form-container-box full-screen-box">
                     <div class="form-header text-center">
                         <h2>Owner-Operator Carrier Application</h2>
                         <p>Onboard with Alsa Logistics Network securely. Please complete all fields below accurately.</p>
@@ -312,31 +312,43 @@
                             <input type="text" id="preferredLanes" placeholder="Midwest, Southeast, Nationwide OTR">
                         </div>
                         
-                        <!-- File Upload Infrastructure Box Components -->
-                        <div class="file-upload-block margin-top-sm">
+                        <!-- Re-engineered Four-Column Document Upload Matrix -->
+                        <div class="file-upload-matrix margin-top-sm">
                             <div class="file-group">
-                                <label class="file-label" for="insuranceDoc">
-                                    <i class="fa-solid fa-file-shield"></i> Certificate of Insurance (COI) *
+                                <label class="file-label" for="mcCertDoc">
+                                    <i class="fa-solid fa-file-contract"></i> MC Certificate *
                                 </label>
-                                <input type="file" id="insuranceDoc" accept=".pdf,.png,.jpg,.jpeg" required>
-                                <span class="file-hint">Accepted formats: PDF, Max 5MB</span>
+                                <input type="file" id="mcCertDoc" accept=".pdf,.png,.jpg,.jpeg" required>
+                                <span class="file-hint">Formats: PDF, Image. Max 5MB</span>
                             </div>
-                                                        <div class="file-group">
+                            <div class="file-group">
+                                <label class="file-label" for="bipdInsuranceDoc">
+                                    <i class="fa-solid fa-shield-halved"></i> BIPD Insurance *
+                                </label>
+                                <input type="file" id="bipdInsuranceDoc" accept=".pdf,.png,.jpg,.jpeg" required>
+                                <span class="file-hint">Formats: PDF, Image. Max 5MB</span>
+                            </div>
+                            <div class="file-group">
                                 <label class="file-label" for="w9Doc">
-                                    <i class="fa-solid fa-file-invoice-dollar"></i> Current Signed W-9 Form *
+                                    <i class="fa-solid fa-file-invoice-dollar"></i> Current Signed W-9 *
                                 </label>
                                 <input type="file" id="w9Doc" accept=".pdf,.png,.jpg,.jpeg" required>
-                                <span class="file-hint">Accepted formats: PDF, Max 5MB</span>
+                                <span class="file-hint">Formats: PDF, Image. Max 5MB</span>
+                            </div>
+                            <div class="file-group">
+                                <label class="file-label" for="otherDoc">
+                                    <i class="fa-solid fa-folder-plus"></i> Other Documents
+                                </label>
+                                <input type="file" id="otherDoc" accept=".pdf,.png,.jpg,.jpeg">
+                                <span class="file-hint">LOA, Factoring Packets, etc.</span>
                             </div>
                         </div>
 
-                        <!-- Additional Fleet Operational Parameters -->
                         <div class="form-group margin-top-sm">
                             <label for="comments">Additional Operational Comments / Fleet Parameters</label>
                             <textarea id="comments" rows="3" placeholder="List any special equipment attributes, driver restrictions, or factoring constraints..."></textarea>
                         </div>
 
-                        <!-- Form Submission Action Button Interface Components -->
                         <button type="submit" id="submitBtn" class="btn btn-primary btn-block margin-top-md">
                             <span id="btnText">Apply Now & Onboard Fleet</span>
                             <span id="btnSpinner" class="spinner hidden"></span>
@@ -346,6 +358,7 @@
                 </div>
             </div>
         </section>
+
 
                                         <!-- FAQ Accordion Layout -->
         <section id="faqs" class="faq-section section-padding bg-alt">
