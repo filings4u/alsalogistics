@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alsa Logistics Network LLC | Premium Nationwide Truck Dispatch Services</title>
+    <meta name="description" content="Professional truck dispatch services across the United States. Secure lucrative freight, optimize routes, and increase revenue for owner-operators and fleets.">
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <!-- Top Emergency & Quick Action Utility Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="top-announcement"><i class="fa-solid fa-truck-fast"></i> Reliable Dispatch. Better Loads. Higher Profits. Nationwide Coverage.</span>
+            <div class="top-contact">
+                <a href="tel:18005550199"><i class="fa-solid fa-phone"></i> Call Dispatch</a>
+                <span class="hours-tag">24/7 Emergency Support Available</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">ALSA</span> LOGISTICS <span class="logo-sub">NETWORK</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#equipment" class="nav-link">Equipment</a>
+                <a href="#process" class="nav-link">Our Process</a>
+                <a href="#faqs" class="nav-link">FAQs</a>
+                <a href="#apply" class="nav-btn-mobile">Apply Now</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#apply" class="btn btn-secondary text-sm">Join Our Network</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Comprehensive Truck Dispatch Services Nationwide</span>
+                    <h1>Your Success Is Our Mission. <br><span class="text-gradient">United We Achieve.</span></h1>
+                    <p>At Alsa Logistics Network LLC, we don’t merely offer truck dispatching; we cultivate enduring relationships with owner-operators and fleet owners. We keep your trucks moving, your schedule packed, and your revenue expanding while you focus safely on the road.</p>
+                    <div class="hero-actions">
+                        <a href="#apply" class="btn btn-primary">Get Started Now</a>
+                        <a href="#services" class="btn btn-outline">Explore Services</a>
+                        <a href="#contact" class="btn btn-link">Request Free Consultation <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="hero-graphic">
+                    <div class="stats-card floating-card-1">
+                        <i class="fa-solid fa-circle-check text-success"></i>
+                        <div>
+                            <h4>24/7 Availability</h4>
+                            <p>Constant Route Monitoring</p>
+                        </div>
+                    </div>
+                    <div class="stats-card floating-card-2">
+                        <i class="fa-solid fa-chart-line text-accent"></i>
+                        <div>
+                            <h4>Highest Market Rates</h4>
+                            <p>Expert Broker Negotiation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us & Core Strategic Focus -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Who We Are</h2>
+                    <p class="section-subtitle">Empowering Owner-Operators and Fleets Across America</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Founded with a clear objective to enhance the profitability of trucking operations through professional dispatch services, Alsa Logistics Network LLC understands the daily hurdles faced by owner-operators. Searching for quality freight, negotiating rates, handling paperwork, and communicating with brokers can detract from driving.</p>
+                        <p>Our dispatchers intertwine with your team, working relentlessly to keep your trucks filled with premium freight while treating your business as if it were their own.</p>
+                    </div>
+                    <div class="mvv-cards">
+                        <div class="mvv-card">
+                            <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+                            <p>To establish ourselves as one of the most trusted truck dispatch companies in America by delivering honest services, clear communication, and access to profitable freight opportunities.</p>
+                        </div>
+                        <div class="mvv-card">
+                            <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
+                            <p>To empower owner-operators and small trucking enterprises with steadfast dispatch solutions that enhance profitability and promote long-term success.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Values Element Matrix -->
+                <div class="values-wrapper margin-top-lg">
+                    <h3 class="text-center margin-bottom-md">Our Driving Core Values</h3>
+                    <div class="values-grid">
+                        <div class="value-item"><i class="fa-solid fa-shield-halved"></i> <span>Integrity</span></div>
+                        <div class="value-item"><i class="fa-solid fa-user-tie"></i> <span>Professionalism</span></div>
+                        <div class="value-item"><i class="fa-solid fa-handshake"></i> <span>Reliability</span></div>
+                        <div class="fa-solid value-item"><i class="fa-solid fa-glasses"></i> <span>Transparency</span></div>
+                        <div class="value-item"><i class="fa-solid fa-heart-circle-check"></i> <span>Commitment</span></div>
+                        <div class="value-item"><i class="fa-solid fa-award"></i> <span>Customer Success</span></div>
+                        <div class="value-item"><i class="fa-solid fa-road-circle-check"></i> <span>Safety</span></div>
+                        <div class="value-item"><i class="fa-solid fa-crown"></i> <span>Excellence</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section Container -->
+        <section id="services" class="services-section section-padding bg-alt">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Premium Dispatch Services</h2>
+                    <p class="section-subtitle">End-to-End Logistical Execution Designed to Scale Your Revenue</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h3>Dedicated Dispatcher</h3>
+                        <p>One dedicated dispatcher focused entirely on your equipment optimization and lane preferences.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                        <h3>Nationwide Freight Searching</h3>
+                        <p>Continuous monitoring of premium load boards and proprietary direct broker networks.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-comments-dollar"></i></div>
+                        <h3>Rate Negotiation Expertise</h3>
+                        <p>Aggressive negotiation strategies focused on maximizing your dollars-per-mile ratio.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-folder-open"></i></div>
+                        <h3>Paperwork & Packets</h3>
+                        <p>Streamlined execution of setup carrier packets, insurance certificates, and billing rate confirmations.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-route"></i></div>
+                        <h3>Route & Appointment Optimization</h3>
+                        <p>Strategic multi-stop planning to lower unproductive deadhead miles and optimize delivery cycles.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3>Accessory Support</h3>
+                        <p>Handling and collection for TONU (Truck Order Not Used), detention pay, lumpers, and factoring submissions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Equipment Capabilities Matrix -->
+        <section id="equipment" class="equipment-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Equipment We Dispatch</h2>
+                    <p class="section-subtitle">We Keep a Comprehensive Fleet Specification Moving Safely Across America</p>
+                </div>
+                <div class="equipment-layout">
+                    <div class="equipment-category">
+                        <h3><i class="fa-solid fa-trailer"></i> Full Heavy Haul & Freight</h3>
+                        <ul class="equipment-list">
+                            <li><i class="fa-solid fa-check"></i> Semi Trucks & Dry Vans</li>
+                            <li><i class="fa-solid fa-check"></i> Temperature Controlled Reefers</li>
+                            <li><i class="fa-solid fa-check"></i> Flatbeds & Step Decks</li>
+                            <li><i class="fa-solid fa-check"></i> Power Only Units</li>
+                            <li><i class="fa-solid fa-check"></i> Conestoga & Lowboy Trailers</li>
+                            <li><i class="fa-solid fa-check"></i> Removable Goosenecks (RGNs)</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-category">
+                        <h3><i class="fa-solid fa- van-shuttle"></i> Expedited Logistics</h3>
+                        <ul class="equipment-list">
+                            <li><i class="fa-solid fa-check"></i> High-Roof Sprinter Vans</li>
+                            <li><i class="fa-solid fa-check"></i> Cargo & Delivery Vans</li>
+                            <li><i class="fa-solid fa-check"></i> Straight & Box Trucks</li>
+                            <li><i class="fa-solid fa-check"></i> Heavy Duty Hotshot Rigs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Standard Operating Onboarding Process -->
+        <section id="process" class="process-section section-padding bg-dark text-white">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="text-white">Our Modern Onboarding Process</h2>
+                    <p class="section-subtitle text-light">Five Simple Steps to Higher Profitability</p>
+                </div>
+                <div class="process-timeline">
+                    <div class="timeline-step">
+                        <div class="step-num">1</div>
+                        <h4>Application</h4>
+                        <p>Complete the secure online secure portal application form below.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num">2</div>
+                        <h4>Compliance</h4>
+                        <p>Submit your active MC/DOT Authority, W-9, and Certificate of Insurance (COI).</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num">3</div>
+                        <h4>Alignment</h4>
+                        <p>Connect immediately with your dedicated logistics dispatcher to review preferred lanes.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num">4</div>
+                        <h4>Sourcing</h4>
+                        <p>Access high-paying, verified freight matches engineered specifically for your setup.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num">5</div>
+                        <h4>Execution</h4>
+                        <p>Focus purely on safe asset operation while our command center manages back-end logistics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Secure Portal Form Container -->
+        <section id="apply" class="application-section section-padding">
+            <div class="container max-width-md">
+                <div class="form-container-box">
+                    <div class="form-header text-center">
+                        <h2>Owner-Operator Carrier Application</h2>
+                        <p>Onboard with Alsa Logistics Network securely. Please complete all fields below accurately.</p>
+                    </div>
+                    <form id="carrierApplicationForm" class="carrier-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="companyName">Company Name *</label>
+                                <input type="text" id="companyName" required placeholder="Logistics LLC">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" required placeholder="(555) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" required placeholder="dispatch@company.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mcNumber">MC Number *</label>
+                                <input type="text" id="mcNumber" required placeholder="MC# 000000">
+                            </div>
+                            <div class="form-group">
+                                <label for="dotNumber">DOT Number *</label>
+                                <input type="text" id="dotNumber" required placeholder="DOT# 0000000">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="equipmentType">Equipment Type *</label>
+                                <select id="equipmentType" required>
+                                    <option value="">Select Equipment</option>
+                                    <option value="Semi Truck">Semi Truck</option>
+                                    <option value="Box Truck">Box Truck</option>
+                                    <option value="Sprinter/Cargo Van">Sprinter/Cargo Van</option>
+                                    <option value="Hotshot">Hotshot Rig</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="trailerType">Trailer Type *</label>
+                                <select id="trailerType" required>
+                                    <option value="">Select Trailer</option>
+                                    <option value="Dry Van">Dry Van</option>
+                                    <option value="Reefer">Reefer</option>
+                                    <option value="Flatbed/Stepdeck">Flatbed / Step Deck</option>
+                                    <option value="Power Only">Power Only</option>
+                                    <option value="Other">Other Specialized</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="truckCount">Number of Operational Trucks *</label>
+                                <input type="number" id="truckCount" min="1" required value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="homeState">Home Base / Origin State *</label>
+                                <input type="text" id="homeState" required placeholder="Illinois">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredLanes">Preferred Running Lanes / Regions</label>
+                            <input type="text" id="preferredLanes" placeholder="Midwest, Southeast, Nationwide OTR">
+                        </div>
+                        
+                        <!-- File Upload Infrastructure Box Components -->
+                        <div class="file-upload-block margin-top-sm">
+                            <div class="file-group">
+                                <label class="file-label" for="insuranceDoc">
+                                    <i class="fa-solid fa-file-shield"></i> Certificate of Insurance (COI) *
+                                </label>
+                                <input type="file" id="insuranceDoc" accept=".pdf,.png,.jpg,.jpeg" required>
+                                <span class="file-hint">Accepted formats: PDF, Max 5MB</span>
+                            </div>
+                                                        <div class="file-group">
+                                <label class="file-label" for="w9Doc">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i> Current Signed W-9 Form *
+                                </label>
+                                <input type="file" id="w9Doc" accept=".pdf,.png,.jpg,.jpeg" required>
+                                <span class="file-hint">Accepted formats: PDF, Max 5MB</span>
+                            </div>
+                        </div>
+
+                        <!-- Additional Fleet Operational Parameters -->
+                        <div class="form-group margin-top-sm">
+                            <label for="comments">Additional Operational Comments / Fleet Parameters</label>
+                            <textarea id="comments" rows="3" placeholder="List any special equipment attributes, driver restrictions, or factoring constraints..."></textarea>
+                        </div>
+
+                        <!-- Form Submission Action Button Interface Components -->
+                        <button type="submit" id="submitBtn" class="btn btn-primary btn-block margin-top-md">
+                            <span id="btnText">Apply Now & Onboard Fleet</span>
+                            <span id="btnSpinner" class="spinner hidden"></span>
+                        </button>
+                        <div id="formFeedback" class="form-feedback hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+                                        <!-- FAQ Accordion Layout -->
+        <section id="faqs" class="faq-section section-padding bg-alt">
+            <div class="container max-width-md">
+                <div class="section-header text-center">
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything You Need to Know About Partnering With Us</p>
+                </div>
+                <div class="accordion-wrapper">
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Is dispatch mandatory for every single load? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="accordion-panel">
+                            <p>No. You maintain absolute control over your assets. You have complete authority to accept or pass on every single load choice our dispatch team sources for your business.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Do you operate nationwide across all freight zones? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="accordion-panel">
+                            <p>Absolutely. We provide thorough dispatch capabilities and route tracking across all contiguous 48 states in the United States.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Can new motor carrier authorities partner with you? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="accordion-panel">
+                            <p>Yes! We specialize in accelerating revenue paths for new authorities, helping you overcome early broker setup bottlenecks and build trusted history.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">What types of transport equipment do you manage? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="accordion-panel">
+                            <p>We manage a highly diverse logistical matrix including Semi Trucks, Dry Vans, Reefers, Flatbeds, Step Decks, Power Only units, Sprinters, Cargo Vans, Box Trucks, Straight Trucks, and Hotshots.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Validation Matrix (Testimonials) -->
+        <section class="testimonials-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Real Drivers, Real Results</h2>
+                    <p class="section-subtitle">See What Our Trusted Carrier Partners Say</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>“Amazing communication and top-notch service. They handled my paperwork setup instantly.”</p>
+                        <span class="author">- Independent Owner-Operator</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>“They continually find reliable freight in hard regions. Deadhead is drastically down.”</p>
+                        <span class="author">- Fleet Owner (5 Trucks)</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>“My dispatcher always has my next load prepared before I even hit my current receiver.”</p>
+                        <span class="author">- Regional Reefer Driver</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Operations Footer -->
+    <footer id="contact" class="global-footer dark-theme">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>ALSA LOGISTICS NETWORK LLC</h3>
+                <p>Supporting Owner-Operators and Fleet Owners across the nation with highly optimized freight routing and asset management solutions.</p>
+                <div class="social-links-container">
+                    <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://tiktok.com" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Command Center</h4>
+                <p><i class="fa-solid fa-phone icon-accent"></i> <a href="tel:18005550199">(800) 555-0199</a></p>
+                <p><i class="fa-solid fa-envelope icon-accent"></i> <a href="mailto:info@alsalogisticsnetwork.com">info@alsalogisticsnetwork.com</a></p>
+                <p><i class="fa-solid fa-clock icon-accent"></i> Mon-Fri: 8AM - 8PM | Sat: 9AM - 2PM</p>
+                <p><i class="fa-solid fa-shield-virus icon-accent"></i> <strong>24/7 Emergency Dispatch Available</strong></p>
+            </div>
+            <div class="footer-map">
+                <h4>National Command Reach</h4>
+                <!-- Scalable Geographic Placeholder Map System Layout -->
+                <div class="map-placeholder">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span>Google Maps Integration Frame</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 ALSA LOGISTICS NETWORK LLC. All Rights Reserved. Nationwide Dispatch Operations Command.</p>
+        </div>
+    </footer>
+
+    <!-- Main Dynamic Application Script Drivers -->
+    <script src="supabase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
