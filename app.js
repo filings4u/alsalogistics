@@ -5,58 +5,131 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Section 1: Responsive Navigation Engine Layout & Control Setup Mapping
+ * Advanced Form Controller - Performs Size, Type, and PDF Integrity Filtering
  */
-function initializeNavigationEngine() {
-    const mobileToggle = document.getElementById("mobileToggle");
-    const navMenu = document.getElementById("navMenu");
-    const navLinks = document.querySelectorAll(".nav-link");
+function initializeApplicationOnboardingForm() {
+    const form = document.getElementById("carrierApplicationForm");
+    if (!form) return;
 
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener("click", () => {
-            const isOpened = navMenu.classList.contains("nav-menu-active");
-            if (isOpened) {
-                navMenu.classList.remove("nav-menu-active");
-                mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                navMenu.style.display = "none";
-            } else {
-                navMenu.classList.add("nav-menu-active");
-                mobileToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                navMenu.style.display = "flex";
-                navMenu.style.flexDirection = "column";
-                navMenu.style.position = "absolute";
-                navMenu.style.top = "70px";
-                navMenu.style.left = "0";
-                navMenu.style.width = "100%";
-                navMenu.style.background = "#FFFFFF";
-                navMenu.style.padding = "24px";
-                navMenu.style.boxShadow = "0 10px 20px rgba(0,0,0,0.05)";
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById("submitBtn");
+        const btnText = document.getElementById("btnText");
+        const btnSpinner = document.getElementById("btnSpinner");
+        const feedback = document.getElementById("formFeedback");
+
+        // 1. Gather upload file arrays from templates
+        const filesMap = {
+            "MC Certificate": document.getElementById("mcCertDoc").files[0],
+            "BIPD Insurance": document.getElementById("bipdInsuranceDoc").files[0],
+            "W-9 Form": document.getElementById("w9Doc").files[0],
+            "Other Document": document.getElementById("otherDoc").files[0]
+        };
+
+        const MAX_BYTES = 5 * 1024 * 1024; // 5MB limit
+        const ALLOWED_MIME = "application/pdf";
+
+        // 2. Perform file parameter validation checks
+        for (const [fieldName, fileObj] of Object.entries(filesMap)) {
+            if (fileObj) {
+                // Check A: Enforce PDF file extension types explicitly
+                if (fileObj.type !== ALLOWED_MIME) {
+                    handleFormError(
+                        `Invalid File Format: The uploaded ${fieldName} must be a valid PDF document. Image or spreadsheet uploads are blocked.`, 
+                        feedback, submitBtn, btnText, btnSpinner
+                    );
+                    return;
+                }
+                
+                // Check B: Enforce document asset capacity restrictions
+                if (fileObj.size > MAX_BYTES) {
+                    handleFormError(
+                        `File Rejected: The uploaded ${fieldName} exceeds the maximum 5MB size limit. Please compress your document and try again.`, 
+                        feedback, submitBtn, btnText, btnSpinner
+                    );
+                    return;
+                }
             }
-        });
-    }
+        }
 
-    // Scroll Spy & Menu Indicator Tracking Interface Optimization
-    window.addEventListener("scroll", () => {
-        let currentSectionId = "";
-        const sections = document.querySelectorAll("section");
-        const scrollPosition = window.scrollY + 150;
+        setLoadingState(true, submitBtn, btnText, btnSpinner, feedback);
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
-                currentSectionId = section.getAttribute("id");
+        try {
+            // 3. Compile structural data fields
+            const payloadData = {
+                full_name: document.getElementById("fullName").value.trim(),
+                company_name: document.getElementById("companyName").value.trim(),
+                phone_number: document.getElementById("phone").value.trim(),
+                email_address: document.getElementById("email").value.trim(),
+                mc_number: document.getElementById("mcNumber").value.trim(),
+                dot_number: document.getElementById("dotNumber").value.trim(),
+                equipment_type: document.getElementById("equipmentType").value,
+                trailer_type: document.getElementById("trailerType").value,
+                truck_count: parseInt(document.getElementById("truckCount").value, 10),
+                home_state: document.getElementById("homeState").value.trim(),
+                preferred_lanes: document.getElementById("preferredLanes").value.trim(),
+                operational_comments: document.getElementById("comments").value.trim(),
+                submitted_at: new Date().toISOString(),
+                attachments: [] 
+            };
+
+            // 4. Transform valid documents to Base64 attachments payload string components
+            for (const [key, fileObj] of Object.entries(filesMap)) {
+                if (fileObj) {
+                    const base64String = await convertFileToBase64(fileObj);
+                    payloadData.attachments.push({
+                        filename: fileObj.name,
+                        content: base64String,
+                        contentType: fileObj.type
+                    });
+                }
             }
-        });
 
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === `#${currentSectionId}`) {
-                link.classList.add("active");
+            // 5. Submit the structured payload straight to your Supabase cloud function router
+            if (typeof SUPABASE_URL === 'undefined') throw new Error("API URL connection route parameters missing.");
+            
+            const edgeFunctionUrl = `${SUPABASE_URL}/functions/v1/onboarding-email-notifier`;
+            const response = await fetch(edgeFunctionUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+                },
+                body: JSON.stringify({ record: payloadData })
+            });
+
+            if (!response.ok) {
+                const errData = await response.json();
+                throw new Error(errData.error || "Server endpoint processing exception.");
             }
-        });
+
+            handleFormSuccess(form, feedback, submitBtn, btnText, btnSpinner);
+
+        } catch (error) {
+            console.error("Transmission Loop Failure Exception:", error);
+            handleFormError(`Application Error: ${error.message}`, feedback, submitBtn, btnText, btnSpinner);
+        }
     });
 }
+
+
+/**
+ * Helper Utility: Converts file objects to Base64 strings using the FileReader API
+ */
+function convertFileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            // Strip metadata prefix from data URL string (e.g., "data:application/pdf;base64,")
+            const base64Content = reader.result.split(',')[1];
+            resolve(base64Content);
+        };
+        reader.onerror = error => reject(error);
+    });
+}
+
 
 /**
  * Section 2: Accessible Accordion Interactivity Controller Array Engine

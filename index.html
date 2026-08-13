@@ -173,6 +173,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Equipment Capabilities Matrix -->
         <section id="equipment" class="equipment-section section-padding">
             <div class="container">
@@ -319,37 +320,38 @@
                             <input type="text" id="preferredLanes" placeholder="Midwest, Southeast, Nationwide OTR">
                         </div>
                         
-                        <!-- Re-engineered Four-Column Document Upload Matrix -->
+                                              <!-- Re-engineered Four-Column Document Upload Matrix (PDF Exclusive) -->
                         <div class="file-upload-matrix margin-top-sm">
                             <div class="file-group">
                                 <label class="file-label" for="mcCertDoc">
                                     <i class="fa-solid fa-file-contract"></i> MC Certificate *
                                 </label>
-                                <input type="file" id="mcCertDoc" accept=".pdf,.png,.jpg,.jpeg" required>
-                                <span class="file-hint">Formats: PDF, Image. Max 5MB</span>
+                                <input type="file" id="mcCertDoc" accept=".pdf" required>
+                                <span class="file-hint">Format restriction: PDF only. Max 5MB</span>
                             </div>
                             <div class="file-group">
                                 <label class="file-label" for="bipdInsuranceDoc">
                                     <i class="fa-solid fa-shield-halved"></i> BIPD Insurance *
                                 </label>
-                                <input type="file" id="bipdInsuranceDoc" accept=".pdf,.png,.jpg,.jpeg" required>
-                                <span class="file-hint">Formats: PDF, Image. Max 5MB</span>
+                                <input type="file" id="bipdInsuranceDoc" accept=".pdf" required>
+                                <span class="file-hint">Format restriction: PDF only. Max 5MB</span>
                             </div>
                             <div class="file-group">
                                 <label class="file-label" for="w9Doc">
                                     <i class="fa-solid fa-file-invoice-dollar"></i> Current Signed W-9 *
                                 </label>
-                                <input type="file" id="w9Doc" accept=".pdf,.png,.jpg,.jpeg" required>
-                                <span class="file-hint">Formats: PDF, Image. Max 5MB</span>
+                                <input type="file" id="w9Doc" accept=".pdf" required>
+                                <span class="file-hint">Format restriction: PDF only. Max 5MB</span>
                             </div>
                             <div class="file-group">
                                 <label class="file-label" for="otherDoc">
                                     <i class="fa-solid fa-folder-plus"></i> Other Documents
                                 </label>
-                                <input type="file" id="otherDoc" accept=".pdf,.png,.jpg,.jpeg">
-                                <span class="file-hint">LOA, Factoring Packets, etc.</span>
+                                <input type="file" id="otherDoc" accept=".pdf">
+                                <span class="file-hint">LOA, Packets. PDF only. Max 5MB</span>
                             </div>
                         </div>
+
 
                         <div class="form-group margin-top-sm">
                             <label for="comments">Additional Operational Comments / Fleet Parameters</label>
