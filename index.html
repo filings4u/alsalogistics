@@ -28,14 +28,14 @@
         </div>
     </div>
 
-       <!-- Main Navigation Header (Clean Responsive Row Layout) -->
+    <!-- Main Navigation Header (Clean Responsive Row Layout) -->
     <header class="main-header">
         <div class="container nav-container">
             <a href="#" class="logo">
                 <span class="logo-accent">ALSA</span> LOGISTICS <span class="logo-sub">NETWORK</span>
             </a>
             
-            <!-- Unified Menu Component containing core links and action triggers -->
+            <!-- Unified Menu Container Layout System -->
             <nav class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About Us</a>
@@ -43,17 +43,20 @@
                 <a href="#equipment" class="nav-link">Equipment</a>
                 <a href="#process" class="nav-link">Our Process</a>
                 <a href="#faqs" class="nav-link">FAQs</a>
-                <!-- Moved inside the menu container for clean mobile execution -->
+                <!-- Only visible inside the mobile drawer layout -->
                 <a href="#apply" class="nav-menu-cta-btn">Join Our Network</a>
             </nav>
             
+            <!-- Keeps desktop CTAs separate from mobile toggle controls -->
             <div class="nav-actions">
+                <a href="#apply" class="btn btn-secondary text-sm desktop-only-btn">Join Our Network</a>
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
     </header>
+
 
     <main>
         <!-- Hero Section -->
